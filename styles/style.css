@@ -1,0 +1,633 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container-fluid {
+    height:100%;
+    min-width: 100%;
+    position:absolute;
+    -webkit-overflow-scrolling: touch;
+    overflow:auto;
+}
+.container {
+    width:100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    height:100%;
+
+}
+.pageColor {
+    background: #FEFBFB;
+}
+.svgMain1 {
+    position: absolute;
+    width: 60px;
+    margin-top:200px;
+    margin-left:40px;
+}
+.svgMain2 {
+    position: absolute;
+    width: 140px;
+    margin-top:350px;
+
+}
+.svgMain3 {
+    position: absolute;
+    bottom:-20px;
+
+    width: 400px;
+    right:20px;
+
+}
+.svgMain3_1 {
+    position: absolute;
+    bottom:-10px;
+
+    width: 400px;
+    right:20px;
+}
+.svgMain4 {
+    position:absolute;
+    right:0;
+    width:200px;
+
+
+}
+.svgMain5 {
+    position:absolute;
+    right:0;
+    width:120px;
+
+}
+.center-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logoVyshka {
+    margin-top: 30px;
+}
+
+
+.logoVyshka svg {
+    width:220px;
+}
+.logoVyshka1 {
+    width:100%;
+    display:flex;
+    margin-top: 100px;
+    justify-content:center;
+}
+.logoVyshka1 svg {
+    width:200px;
+
+
+}
+
+/* Главная-приветствие */
+.title {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+.title1 {
+    text-align:center;
+
+    margin:auto;
+
+}
+.mainTitle {
+    margin-top:100px;
+    font-size:20px;
+    font-weight:300;
+    letter-spacing: 1px;
+    line-height:15px;
+    text-transform: uppercase;
+    color: #403177;
+
+}
+.mainTitle1 {
+    font-size:16px;
+    font-weight:300;
+    letter-spacing: 1px;
+    line-height:15px;
+    margin-right: 10px;
+    text-transform: uppercase;
+    color: #403177;
+}
+.mainTitleSecond {
+    text-transform: uppercase;
+    margin-top: 20px;
+    color: #403177;
+
+    line-height: 10px;
+    font-size:50px;
+    font-family: 'Roboto';
+
+}
+.mainTitleSecond1 {
+    text-transform: uppercase;
+    margin-top: 20px;
+    color: #403177;
+
+    line-height: 10px;
+    font-size:20px;
+    font-family: 'Roboto';
+}
+.descTitle {
+    display: flex;
+    font-size:18px;
+    line-height: 20px;
+    flex-flow: column;
+    justify-content: center;
+    text-align:center;
+    width: 40%;
+    color: #404149;
+}
+
+.buttonStart {
+    margin-top:40px;
+    border: 4px solid #FFC900;
+    width: 200px;
+    height: 40px;
+    text-decoration:none;
+    outline: none;
+    font-size:20px;
+    color: #FFC900;
+    text-transform: uppercase;
+    display: flex;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.buttonStart:hover {
+    text-decoration:none;
+    color: #FFC900;
+    -webkit-box-shadow: 0px 6px 15px -4px rgba(176,176,176,1);
+    -moz-box-shadow: 0px 6px 15px -4px rgba(176,176,176,1);
+    box-shadow: 0px 6px 15px -4px rgba(176,176,176,1);
+}
+.titleQuestion {
+    font-style: normal;
+    color: #403177;
+    width:50%;
+    font-weight: 600;
+    font-size: 36px;
+    margin:auto;
+    margin-top:40px;
+
+}
+.question {
+    font-style: normal;
+    letter-spacing:1px;
+    color: #403177;
+    width:50%;
+    height:230px;
+    font-size: 20px;
+    margin:auto;
+
+    margin-top:20px;
+    line-height: 22px;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+.font-sizer {
+    font-size: 17px;
+    line-height:17px;
+}
+.answer {
+
+    list-style: none;
+    width:50%;
+    padding:0;
+    margin:auto;
+    margin-top:20px;
+    border-top:2px solid #FFC900;
+    border-left:2px solid #FFC900;
+    border-right:2px solid #FFC900;
+}
+
+.answer .correct {
+    font-weight: 600;
+}
+.answer .correct::before {
+    content: '';
+    position:absolute;
+    left:-2px;
+    top:-2px;
+    bottom:0;
+
+
+    width:2%;
+    height:44px;
+    transition:0.5s;
+    background:#34B14F;
+
+
+    border:2px solid #34B14F;
+    animation: fadeIn 0.3s ease forwards;
+
+}
+.answer .wrong::before {
+    content: '';
+    position:absolute;
+    left:-2px;
+    top:-2px;
+    bottom:0;
+
+
+    width:2%;
+    height:44px;
+    transition:0.5s;
+    background: #FF0202;
+
+
+    border:2px solid #FF0202;
+    animation: fadeIn 0.3s ease forwards;
+
+}
+.answer .already-answered {
+    pointer-events: none;
+}
+.answerVariant {
+    position:relative;
+    cursor:pointer;
+    display:flex;
+    border-bottom:2px solid #FFC900;
+    padding: 20px;
+    background:white;
+    font-size: 18px;
+    line-height:14px;
+    font-weight:300;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    height: 40px;
+    opacity: 0;
+    transition: 0.3s;
+    animation: fadeIn 0.3s ease forwards;
+}
+.answerVariant svg {
+    position:absolute;
+    right:10px;
+    width:24px;
+    transition:0.3s;
+}
+.answerVariant:hover {
+
+    color:#848484;
+}
+.answerVariant:hover svg {
+    transform: scale(1.1)
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+
+}
+.answerStyle span {
+    margin:auto;
+    padding-left: 5%;
+}
+.svgAnswer {
+    width: 20px;
+    margin-right:10px;
+}
+
+.nextSlide {
+    margin:auto;
+    margin-top:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:50%;
+}
+.nextQButton {
+    outline:none;
+    border: 2px solid #FFC900;
+    background:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width: 140px;
+    background: white;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #FFC900;
+    letter-spacing:1px;
+    transition:0.4s;
+}
+.nextQButton:hover {
+    -webkit-box-shadow: 0px 6px 15px -4px rgba(176,176,176,1);
+    -moz-box-shadow: 0px 6px 15px -4px rgba(176,176,176,1);
+    box-shadow: 0px 6px 15px -4px rgba(176,176,176,1);
+}
+/* Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ */
+.resultContainer {
+    margin-top:200px;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.resultTitle {
+    color:#403177;
+}
+.result {
+    text-align: center;
+    color: #FFC900;
+    font-weight: 800;
+    font-size: 50px;
+    margin-bottom:-20px;
+}
+
+.businessStyle {
+    position:absolute;
+    height:50px;
+    margin: auto;
+    display:flex;
+    font-size:20px;
+    font-weight:300;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    left: 0;
+    background: #F6D25C;
+    width:100%;
+    bottom:0;
+}
+/* ÐœÐ¾Ð±Ð¸Ð»ÐºÐ° */
+@media (max-width: 980px) {
+    .answer {
+        width:70%;
+    }
+    .answerVariant {
+        font-size: 2vw;
+    }
+    .question {
+        width:70%;
+    }
+    .titleQuestion {
+        width: 70%;
+    }
+
+}
+@media (max-width:880px) {
+    .svgMain1 {
+
+        width: 10vw;
+        margin-top:0;
+        margin-left:1vw;
+    }
+    .svgMain2 {
+
+        width:20vw;
+
+        margin-top:80px;
+    }
+    .svgMain3 {
+
+        bottom:-60px;
+
+        width: 300px;
+        right:-70px;
+
+    }
+    .svgMain4 {
+        position:absolute;
+        right:0;
+        top:0;
+        width:150px;
+
+        height:180px;
+    }
+    .svgMain5 {
+
+        right:0;
+        width:100px;
+        height:120px;
+    }
+    .logoVyshka {
+        margin-top: 0;
+        margin-bottom:-20px;
+    }
+    .logoVyshka svg {
+        width: 160px;
+
+    }
+
+
+    .title {
+        margin-top:0;
+
+
+
+    }
+    .descTitle {
+        width:70%;
+        font-size:14px;
+
+        line-height:16px;
+    }
+
+    .answer .correct::before {
+        height: 50px;
+    }
+    .answer .wrong::before {
+        height: 50px;
+    }
+    .answer {
+        width:75%;
+    }
+    .titleQuestion {
+        width: 75%;
+        text-align:center;
+    }
+    .question {
+        width:75%;
+        text-align:center;
+        height: 300px;
+    }
+    .answerVariant {
+        font-size: 2.5vw;
+        height:50px;
+    }
+
+
+}
+@media (max-width: 480px) {
+    .mainTitle {
+        font-size:5vw;
+
+    }
+    .mainTitleSecond {
+        font-size: 10vw;
+    }
+    .descTitle {
+        width:95%;
+        font-size:14px;
+
+        line-height:18px;
+    }
+    .svgMain1 {
+        opacity:0.4;
+        z-index:-1;
+    }
+    .svgMain2 {
+        opacity:0.4;
+        z-index:-1;
+    }
+    .svgMain3 {
+        width:200px;
+        opacity:0.4;
+        z-index:-1;
+        right:-20px;
+        bottom: -120px;
+    }
+    .svgMain4 {
+        opacity:0.4;
+        z-index:-1;
+        right:0;
+        top:0;
+        width:130px;
+
+        height:140px;
+    }
+    .svgMain5 {
+        opacity:0.4;
+        z-index:-1;
+        right:-20px;
+        width:120px;
+        height:100px;
+    }
+    .titleQuestion {
+        margin-top:15px;
+        font-size:22px;
+    }
+    .question {
+        width:90%;
+        font-size:16px;
+        line-height:17px;
+        height:300px;
+
+
+    }
+    .logoVyshka1 svg {
+        width:170px;
+    }
+
+    .font-sizer {
+        font-size: 13px;
+        line-height:14px;
+    }
+    .answer {
+        width:90%;
+        left:10px;
+        right:10px;
+
+        margin-bottom:10px;
+
+
+    }
+    .answerVariant {
+        font-size:15px;
+        padding:20px;
+    }
+    .nextSlide {
+        margin-bottom:20px;
+        bottom:30px;
+        width:100%;
+    }
+    .nextQButton {
+        font-size:16px;
+        width:100px;
+        height:30px;
+    }
+    .businessStyle {
+        font-size:13px;
+    }
+    .answerVariant svg {
+        width:20px;
+        margin-right: -5px;
+    }
+    .buttonStart {
+        margin-bottom: 100px;
+    }
+}
+@media (max-width: 320px) {
+    .buttonStart {
+        margin-top:10px;
+        width: 150px;
+        height: 30px;
+        font-size:14px;
+        border:2px solid #FFC900
+    }
+    .mainTitle {
+        margin-top:40px;
+
+    }
+    .descTitle {
+        width:100%;
+        font-size:12px;
+
+        line-height:18px;
+    }
+    .svgMain1 {
+
+        opacity:0.2;
+        z-index:-1;
+    }
+    .svgMain2 {
+        opacity:0.2;
+        z-index:-1;
+    }
+
+    .svgMain4 {
+        opacity:0.2;
+        z-index:-1;
+    }
+    .svgMain5 {
+        opacity:0.2;
+        z-index:-1;
+    }
+    .question {
+        width:90%;
+        font-size:14px;
+        line-height:17px;
+        height:auto;
+    }
+
+    .logoVyshka1 svg {
+        width:120px;
+    }
+    .logoVyshka1 {
+
+        margin-top: 40px;
+
+    }
+    .font-sizer {
+        font-size: 11px;
+        line-height:12px;
+    }
+    .resultContainer {
+        margin-top:80px;
+    }
+    .businessStyle {
+        height:30px;
+    }
+
+}
